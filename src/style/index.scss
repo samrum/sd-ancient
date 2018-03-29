@@ -1,0 +1,22 @@
+@import "default";
+@import "components/header";
+@import "components/intro";
+@import "components/widget";
+@import "components/latest-deals";
+@import "components/deal-details";
+@import "components/footer";
+
+section.intro,
+section.page-content {
+    display: grid;
+    grid-template-columns: 138px 1fr 138px;
+}
+
+.update-info {
+    font-size: 10px;
+    text-align: right;
+}
+
+main {
+    padding: 0 5px;
+}

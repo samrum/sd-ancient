@@ -1,0 +1,48 @@
+.global-header {
+    margin-bottom: 20px;
+
+    img {
+        vertical-align: middle;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: 0.5fr 0.8fr 1fr 1fr 1.5fr 0.8fr;
+        border-top: 1px solid #666666;
+        border-bottom: 1px solid #666666;
+    }
+
+    li {
+        font-size: 13px;
+        font-weight: bold;
+        padding: 2px 0;
+        text-align: center;
+
+        &.active {
+            background-color: #5a5a5a;
+
+            a {
+                color: #fff;
+
+                &:hover {
+                    text-decoration: underline overline;
+                    color: #fff;
+                }
+            }
+        }
+
+        &:hover:not(.active) {
+            background-color: rgb(188, 214, 227);
+        }
+
+        a {
+            text-decoration: none;
+            color: #000099;
+
+            &:hover {
+                text-decoration: underline overline;
+                color: #990000;
+            }
+        }
+    }
+}

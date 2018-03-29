@@ -1,0 +1,14 @@
+@import "patterns/linkList";
+
+.global-footer {
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    padding-bottom: 35px;
+
+    a:hover {
+        color: #990000;
+    }
+}

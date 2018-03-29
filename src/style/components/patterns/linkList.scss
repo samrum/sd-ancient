@@ -1,0 +1,14 @@
+.linkList {
+    display: inline;
+
+    &.row {
+        li {
+            display: inline;
+        }
+    }
+
+    &.column {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,23 @@
+button {
+    &.link {
+        padding: 0;
+        border: none;
+        color: #000;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: underline;
+
+        &:hover {
+            color: #990000;
+            cursor: pointer;
+        }
+
+        &.overline {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline overline;
+            }
+        }
+    }
+}
