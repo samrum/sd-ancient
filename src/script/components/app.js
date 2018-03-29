@@ -12,7 +12,7 @@ if (module.hot) {
 export default class App extends Component {
     render() {
         return (
-            <div>
+            <div id="app">
                 <LastUpdate />
                 <section class="page-content">
                     <LeftColumn />
