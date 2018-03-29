@@ -17,7 +17,7 @@ export default class LatestDeals extends Component {
         const links = [
             {
                 label: 'Last 20',
-                url: '/',
+                url: '.',
             },
             {
                 label: 'Last 7 Days',
