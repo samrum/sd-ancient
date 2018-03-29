@@ -21,11 +21,11 @@ export default class LatestDeals extends Component {
             },
             {
                 label: 'Last 7 Days',
-                url: 'https://slickdeals.net/newsearch.php?src=SearchBarV2&pp=20&sort=relevance&rating=frontpage&previousdays=7&forumid%5B%5D=30&forumid%5B%5D=9&forumid%5B%5D=54&forumid%5B%5D=53&forumid%5B%5D=4&forumid%5B%5D=25',
+                url: 'https://slickdeals.net/newsearch.php?src=SearchBarV2&pp=20&sort=relevance&rating=frontpage&previousdays=7&forumid%5B%5D=all&forumid%5B%5D=9&forumid%5B%5D=30&forumid%5B%5D=54&forumid%5B%5D=4&hideexpired=1',
             },
             {
                 label: 'This Month',
-                url: 'https://slickdeals.net/newsearch.php?src=SearchBarV2&pp=20&sort=relevance&rating=frontpage&previousdays=30&forumid%5B%5D=all&forumid%5B%5D=30&forumid%5B%5D=9&forumid%5B%5D=54&forumid%5B%5D=4',
+                url: 'https://slickdeals.net/newsearch.php?src=SearchBarV2&pp=20&sort=relevance&rating=frontpage&previousdays=30&forumid%5B%5D=all&forumid%5B%5D=30&forumid%5B%5D=9&forumid%5B%5D=54&forumid%5B%5D=4&hideexpired=1',
             },
         ];
 
