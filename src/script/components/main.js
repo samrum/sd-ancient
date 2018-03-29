@@ -12,7 +12,14 @@ export default class Main extends Component {
     componentDidMount() {
         DealFetcher.getDeals()
             .then((groupedDeals) => {
+                let dealCount = 0;
+
+                Object.keys(groupedDeals).forEach((key) => {
+                    dealCount += groupedDeals[key].length;
+                });
+
                 this.setState({
+                    dealCount,
                     deals: groupedDeals,
                 });
             });
@@ -20,10 +27,15 @@ export default class Main extends Component {
 
     render() {
         if (Object.keys(this.state.deals).length > 0) {
+            const dealProps = {
+                dealCount: this.state.dealCount,
+                deals: this.state.deals,
+            };
+
             return (
                 <main>
-                    <LatestDeals deals={this.state.deals} />
-                    <LatestDealDetails deals={this.state.deals} />
+                    <LatestDeals {...dealProps} />
+                    <LatestDealDetails {...dealProps} />
                 </main>
             );
         }
