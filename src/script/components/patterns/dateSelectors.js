@@ -1,25 +1,34 @@
 import { h, Component } from 'preact';
 
 export default class DateSelectors extends Component {
-    render() {
+    render({ displayDate }) {
         const monthOptions = [];
         const dayOptions = [];
         const yearOptions = [];
+        const date = new Date(displayDate);
+        const month = date.getMonth();
+        const day = date.getDate();
+        const year = date.getFullYear();
 
         for (let i = 1; i <= 12; i += 1) {
             const label = (i < 10) ? `0${i}` : i;
+            const selected = i === (month + 1);
 
-            monthOptions.push(<option>{ label }</option>);
+            monthOptions.push(<option selected={selected}>{ label }</option>);
         }
 
         for (let i = 1; i <= 31; i += 1) {
-            dayOptions.push(<option>{ i }</option>);
+            const selected = i === day;
+
+            dayOptions.push(<option selected={selected}>{ i }</option>);
         }
 
         const currentYear = new Date().getFullYear();
 
         for (let i = currentYear; i >= 2000; i -= 1) {
-            yearOptions.push(<option>{ i }</option>);
+            const selected = i === year;
+
+            yearOptions.push(<option selected={selected}>{ i }</option>);
         }
 
         return (

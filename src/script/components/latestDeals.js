@@ -31,6 +31,15 @@ export default class LatestDeals extends Component {
 
         const filterLinks = LinkList(links, ' | ', 'row');
 
+        const dealDays = Object.keys(deals);
+
+        const toDate = dealDays[0];
+        const fromDate = dealDays[dealDays.length - 1];
+        const footerProps = {
+            toDate,
+            fromDate,
+        };
+
         return (
             <div class="latest-deals">
                 <header class="latest-deals-header">Latest Deals</header>
@@ -39,7 +48,7 @@ export default class LatestDeals extends Component {
                     { filterLinks }
                 </section>
                 { latestDealsSections }
-                <LatestDealsFooter />
+                <LatestDealsFooter {...footerProps} />
             </div>
         );
     }
