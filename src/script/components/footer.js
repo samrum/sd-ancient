@@ -21,13 +21,11 @@ export default function Footer() {
         },
     ];
 
-    const linkElements = LinkList(links, ' | ', 'row');
+    const footerLinks = LinkList(links, ' | ', 'row');
 
     return (
         <footer class="global-footer">
-            <ul>
-                { linkElements }
-            </ul>
+            { footerLinks }
         </footer>
     );
 }
