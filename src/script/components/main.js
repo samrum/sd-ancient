@@ -19,11 +19,15 @@ export default class Main extends Component {
     }
 
     render() {
-        return (
-            <main>
-                <LatestDeals deals={this.state.deals} />
-                <LatestDealDetails deals={this.state.deals} />
-            </main>
-        );
+        if (Object.keys(this.state.deals).length > 0) {
+            return (
+                <main>
+                    <LatestDeals deals={this.state.deals} />
+                    <LatestDealDetails deals={this.state.deals} />
+                </main>
+            );
+        }
+
+        return <main><div class="dealLoadingPlaceholder" /></main>;
     }
 }

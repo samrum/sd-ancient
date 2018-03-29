@@ -1,9 +1,9 @@
-import { h, render, Component } from 'preact';
+import { h, render } from 'preact';
+import App from './components/app';
 
 let root;
 
 function init() {
-    let App = require('./components/app').default;
     root = render(<App />, document.getElementById('app'), root);
 }
 
