@@ -15,7 +15,7 @@ export default class DealDetails extends Component {
             },
             {
                 label: 'Top',
-                url: './#top',
+                url: '#top',
             },
         ];
 
