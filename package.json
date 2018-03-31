@@ -1,13 +1,15 @@
 {
-  "name": "sd-super-classic",
+  "name": "sd-ancient",
   "version": "1.0.0",
+  "description": "Slickdeals circa Jan. 2001. Pulls FP deals from Slickdeals' FP RSS feed.",
+  "author": "Ruben Medina",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --mode development --hot",
     "prod": "NODE_ENV=production webpack --mode production",
-    "lint": "eslint"
+    "lint": "eslint src --fix"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
