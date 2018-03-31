@@ -90,6 +90,7 @@ module.exports = {
                                 targets: {
                                     browsers: ['> 5% in US'],
                                 },
+                                modules: false
                             }],
                         ],
                         plugins: [
