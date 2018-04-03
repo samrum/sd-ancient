@@ -42,20 +42,12 @@ export default class DealFetcher {
 
     static fetchDeals() {
         return new Promise((resolve, reject) => {
-            if (process.env.NODE_ENV === 'development') {
-                const data = localStorage.getItem('dealData');
-                const deals = DealFetcher.parseDeals({ results: JSON.parse(data) });
-
-                resolve(deals);
-            }
-            else {
-                DealFetcher.getDealsViaYahoo()
-                    .then((data) => {
-                        const deals = DealFetcher.parseDeals(data);
-                        resolve(deals);
-                    })
-                    .catch(error => reject(error));
-            }
+            DealFetcher.getDealsViaYahoo()
+                .then((data) => {
+                    const deals = DealFetcher.parseDeals(data);
+                    resolve(deals);
+                })
+                .catch(error => reject(error));
         });
     }
 
