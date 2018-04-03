@@ -1,0 +1,14 @@
+{
+  "runtime~main.js": "scripts/runtime~main.0eb0160fd0431668aa1f.js",
+  "runtime~main.js.map": "scripts/runtime~main.0eb0160fd0431668aa1f.js.map",
+  "vendors~main.js": "scripts/vendors~main.c5330594aa99a747412c.js",
+  "vendors~main.js.map": "scripts/vendors~main.c5330594aa99a747412c.js.map",
+  "main.js": "scripts/main.e8ec0939f251c1734953.js",
+  "main.css": "style/main.1935fedf9901b6827ba797b4ed0ac172.css",
+  "main.js.map": "scripts/main.e8ec0939f251c1734953.js.map",
+  "main.css.map": "style/main.1935fedf9901b6827ba797b4ed0ac172.css.map",
+  "images/logo.gif": "images/d231bd85f7a9017dc38ccc2723b320ee.gif",
+  "images/recommended.gif": "images/73f93e76658685d3e40ad313e240b9b0.gif",
+  "favicon.ico": "favicon.ico",
+  "index.html": "index.html"
+}
