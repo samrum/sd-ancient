@@ -126,7 +126,7 @@ module.exports = (env, argv) => {
         },
         devtool: isProd ? 'nosources-source-map' : 'eval-source-map',
         output: {
-            filename: 'scripts/[name].[chunkhash].js',
+            filename: `scripts/[name].${isProd ? '[chunkhash].js' : 'js'}`,
             path: path.resolve(__dirname, 'dist'),
         },
     };
