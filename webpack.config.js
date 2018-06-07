@@ -1,21 +1,14 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const InlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const webpack = require('webpack');
 
-// https://github.com/webpack-contrib/mini-css-extract-plugin
-
 module.exports = (env, argv) => {
     const isProd = argv.mode !== 'development';
-
-    const extractSass = new ExtractTextPlugin({
-        filename: 'style/[name].[contenthash].css',
-        disable: !isProd,
-    });
 
     const moduleIdentifer = isProd ?
         new webpack.HashedModuleIdsPlugin() :
@@ -32,20 +25,21 @@ module.exports = (env, argv) => {
             rules: [
                 {
                     test: /\.scss$/,
-                    use: extractSass.extract({
-                        use: [
-                            {
-                                loader: 'css-loader',
-                                options: {
-                                    minimize: true,
-                                    sourceMap: isProd,
-                                },
+                    use: [
+                        {
+                            loader: isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+                        },
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true,
+                                sourceMap: isProd,
                             },
-                            {
-                                loader: 'sass-loader',
-                            }],
-                        fallback: 'style-loader',
-                    }),
+                        },
+                        {
+                            loader: 'sass-loader',
+                        },
+                    ],
                 },
                 {
                     test: /\.html$/,
@@ -114,13 +108,16 @@ module.exports = (env, argv) => {
                 inlineSource: 'runtime~.+\\.js',
             }),
             new InlineSourcePlugin(),
-            extractSass,
             new ProgressBarPlugin({
                 format: '\u001b[90m\u001b[44mBuild\u001b[49m\u001b[39m [:bar] \u001b[32m\u001b[1m:percent\u001b[22m\u001b[39m (:elapseds) \u001b[2m:msg\u001b[22m',
                 renderThrottle: 100,
             }),
             moduleIdentifer,
             new ManifestPlugin(),
+            new MiniCssExtractPlugin({
+                filename: isProd ? 'style/[name].[hash].css' : 'style/[name].css',
+                chunkFilename: isProd ? 'style/[id].[hash].css' : 'style/[id].css',
+            }),
         ],
         optimization: {
             splitChunks: {
