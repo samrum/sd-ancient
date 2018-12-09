@@ -1,14 +1,8 @@
 {
-  "runtime~main.js": "scripts/runtime~main.111d381cc4ee561d8c69.js",
-  "runtime~main.js.map": "scripts/runtime~main.111d381cc4ee561d8c69.js.map",
-  "vendors~main.js": "scripts/vendors~main.9b50fa8bb8527a99a25b.js",
-  "vendors~main.js.map": "scripts/vendors~main.9b50fa8bb8527a99a25b.js.map",
-  "main.css": "style/2.d5476a760429c9f7f5a2.css",
-  "main.js": "scripts/main.207c72fc3941fbbe86fd.js",
-  "main.css.map": "style/2.d5476a760429c9f7f5a2.css.map",
-  "main.js.map": "scripts/main.207c72fc3941fbbe86fd.js.map",
-  "images/logo.gif": "images/d231bd85f7a9017dc38ccc2723b320ee.gif",
+  "main.css": "styles/0.4a2878660c9d614c5107.css",
+  "main.js": "scripts/main.eaadd94bfc7b400c2741.js",
+  "runtime~main.js": "scripts/runtime~main.187555cfde6e8f2ea9ac.js",
+  "images/logo.gif": "images/698c1f693df9297bf647cdb3fe61e302.gif",
   "images/recommended.gif": "images/73f93e76658685d3e40ad313e240b9b0.gif",
-  "favicon.ico": "favicon.ico",
   "index.html": "index.html"
 }
