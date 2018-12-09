@@ -4,14 +4,10 @@ import LinkList from "./patterns/linkList";
 
 export default class DealDetails extends Component {
   render({ deal, showNext, showPrevious }) {
-    const encodedDealUrl = encodeURIComponent(deal.link);
-
     const links = [
       {
         label: "Tell a Friend",
-        url: `https://slickdeals.net/forums/send_to_friend.php?threadid=${
-          deal.threadId
-        }&couponid=0&url=${encodedDealUrl}`,
+        url: deal.link,
         image: TellAFriendIcon,
         openInNewTab: true,
       },
