@@ -190,10 +190,13 @@ li {
   font-size: 13px;
   font-weight: bold;
   color: #000066; }
+  .latest-deals-section .placeholder {
+    height: 13px; }
   .latest-deals-section header {
+    display: flex;
+    justify-content: center;
     background-color: #ccccff;
-    padding: 3px;
-    text-align: center; }
+    padding: 3px; }
   .latest-deals-section li {
     padding: 3px; }
     .latest-deals-section li a {
@@ -241,6 +244,10 @@ button.link {
 
 .deal-details {
   background-color: #f7f7e7; }
+  .deal-details.placeholder {
+    height: 220px; }
+    .deal-details.placeholder header {
+      height: 21px; }
   .deal-details header {
     background-color: #0033cc;
     color: #ffff00;

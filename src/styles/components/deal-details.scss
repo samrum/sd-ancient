@@ -2,45 +2,53 @@
 @import "patterns/linkList";
 
 .deal-details {
-    background-color: #f7f7e7;
+  background-color: #f7f7e7;
+
+  &.placeholder {
+    height: 220px;
 
     header {
-        background-color: #0033cc;
-        color: #ffff00;
-        padding: 3px;
-        font-size: 13px;
-        font-weight: bold;
-
-        span {
-            font-size: 11px;
-            font-weight: normal;
-        }
+      height: 21px;
     }
+  }
 
-    .details-top {
-        display: flex;
-        justify-content: space-between;
-        padding: 3px;
-        font-size: 12px;
-        margin-bottom: 20px;
+  header {
+    background-color: #0033cc;
+    color: #ffff00;
+    padding: 3px;
+    font-size: 13px;
+    font-weight: bold;
 
-        a {
-            color: #000;
-
-            &:hover {
-                color: #990000;
-            }
-        }
+    span {
+      font-size: 11px;
+      font-weight: normal;
     }
+  }
 
-    .details-text {
-        font-family: "Times New Roman", Times, serif;
-        padding: 3px;
-        font-size: 16px;
-        padding-bottom: 30px;
+  .details-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    font-size: 12px;
+    margin-bottom: 20px;
 
-        a:hover {
-            color: #990000;
-        }
+    a {
+      color: #000;
+
+      &:hover {
+        color: #990000;
+      }
     }
+  }
+
+  .details-text {
+    font-family: "Times New Roman", Times, serif;
+    padding: 3px;
+    font-size: 16px;
+    padding-bottom: 30px;
+
+    a:hover {
+      color: #990000;
+    }
+  }
 }

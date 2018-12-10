@@ -1,9 +1,17 @@
 import { h, Component } from "preact";
-import TellAFriendIcon from "./../../images/tellafriend.gif";
-import LinkList from "./patterns/linkList";
+import TellAFriendIcon from "@images/tellafriend.gif";
+import LinkList from "@components/patterns/linkList";
 
 export default class DealDetails extends Component {
   render({ deal, showNext, showPrevious }) {
+    if (!deal) {
+      return (
+        <article class="deal-details placeholder">
+          <header />
+        </article>
+      );
+    }
+
     const links = [
       {
         label: "Tell a Friend",

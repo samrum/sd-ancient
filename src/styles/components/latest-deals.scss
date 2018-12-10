@@ -1,71 +1,76 @@
 .latest-deals-header {
-    font-size: 14px;
-    font-style: italic;
-    text-align: center;
-    padding-right: 8px;
-    background-color: #086500;
-    color: white;
-    border-top-right-radius: 15px;
-    width: 145px;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  padding-right: 8px;
+  background-color: #086500;
+  color: white;
+  border-top-right-radius: 15px;
+  width: 145px;
 }
 
 .latest-deal-controls {
-    background-color: #cee7ff;
-    font-size: 13px;
-    border-top: 1px solid #808080;
+  background-color: #cee7ff;
+  font-size: 13px;
+  border-top: 1px solid #808080;
 
-    a {
-        color: #000;
-        text-decoration: none;
+  a {
+    color: #000;
+    text-decoration: none;
 
-        &:hover {
-            color: #990000;
-            text-decoration: underline overline;
-        }
+    &:hover {
+      color: #990000;
+      text-decoration: underline overline;
     }
+  }
 }
 
 .latest-deals-section {
-    font-size: 13px;
-    font-weight: bold;
-    color: #000066;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000066;
 
-    header {
-        background-color: #ccccff;
-        padding: 3px;
-        text-align: center;
+  .placeholder {
+    height: 13px;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    background-color: #ccccff;
+    padding: 3px;
+  }
+
+  li {
+    padding: 3px;
+
+    a {
+      color: #000066;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline overline;
+        color: #990000;
+        cursor: pointer;
+      }
     }
 
-    li {
-        padding: 3px;
-
-        a {
-            color: #000066;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline overline;
-                color: #990000;
-                cursor: pointer;
-            }
-        }
-
-        &:nth-child(2n) {
-            background-color: #f2f2f2;
-        }
+    &:nth-child(2n) {
+      background-color: #f2f2f2;
     }
+  }
 }
 
 .latest-deals-footer {
-    font-size: 13px;
-    padding: 3px;
-    margin: 20px 0;
+  font-size: 13px;
+  padding: 3px;
+  margin: 20px 0;
 
-    div {
-        margin-left: 82px;
-    }
+  div {
+    margin-left: 82px;
+  }
 }
 
 .latest-deals-details {
-    border-bottom: 1px solid #666;
+  border-bottom: 1px solid #666;
 }

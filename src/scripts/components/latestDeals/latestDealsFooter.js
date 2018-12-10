@@ -1,5 +1,5 @@
 import { h, Component } from "preact";
-import DateSelectors from "./patterns/dateSelectors";
+import DateSelectors from "@components/patterns/dateSelectors";
 
 export default class LatestDealsFooter extends Component {
   render({ fromDate, toDate }) {
