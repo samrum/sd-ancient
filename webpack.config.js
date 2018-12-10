@@ -15,6 +15,7 @@ module.exports = (env, argv) => {
     images: path.resolve(__dirname, "src/images"),
     scripts: path.resolve(__dirname, "src/scripts"),
     components: path.resolve(__dirname, "src/scripts/components"),
+    utils: path.resolve(__dirname, "src/scripts/utils"),
   };
 
   return {
@@ -38,12 +39,12 @@ module.exports = (env, argv) => {
           ],
         },
         {
-            test: /\.(png|jpe?g|gif)$/,
-            loader: 'url-loader',
-            options: {
-                name: 'images/[hash].[ext]',
-                limit: 1024 * 1,
-            },
+          test: /\.(png|jpe?g|gif)$/,
+          loader: "url-loader",
+          options: {
+            name: "images/[hash].[ext]",
+            limit: 1024 * 1,
+          },
         },
         {
           test: /\.js$/,
@@ -63,9 +64,7 @@ module.exports = (env, argv) => {
                   },
                 ],
               ],
-              plugins: [
-                ['transform-react-jsx', { pragma: 'h' }],
-            ],
+              plugins: [["transform-react-jsx", { pragma: "h" }]],
             },
           },
         },
@@ -77,14 +76,15 @@ module.exports = (env, argv) => {
         "@images": paths.images,
         "@scripts": paths.scripts,
         "@components": paths.components,
+        "@utils": paths.utils,
       },
     },
     plugins: [
       new CleanWebpackPlugin(["dist"]),
       new HtmlWebpackPlugin({
         template: isProd
-          ? '!!prerender-loader?string!src/index.html'
-          : 'src/index.html',
+          ? "!!prerender-loader?string!src/index.html"
+          : "src/index.html",
         inject: true,
         inlineSource: "runtime~.+\\.js|.css",
       }),

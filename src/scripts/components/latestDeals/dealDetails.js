@@ -1,6 +1,7 @@
 import { h, Component } from "preact";
 import TellAFriendIcon from "@images/tellafriend.gif";
 import LinkList from "@components/patterns/linkList";
+import { formatTimestamp } from "@utils/Dates";
 
 export default class DealDetails extends Component {
   render({ deal, showNext, showPrevious }) {
@@ -15,7 +16,7 @@ export default class DealDetails extends Component {
     const links = [
       {
         label: "Tell a Friend",
-        url: deal.link,
+        url: deal.url,
         image: TellAFriendIcon,
         openInNewTab: true,
       },
@@ -41,10 +42,12 @@ export default class DealDetails extends Component {
 
     const actionLinks = LinkList(links, " | ", "row");
 
+    const date = formatTimestamp(deal.timestamp);
+
     return (
       <article class="deal-details" id={deal.id}>
         <header>
-          &nbsp;{deal.title} <span>({deal.postDate})</span>
+          &nbsp;{deal.title} <span>({date})</span>
         </header>
         <section class="details-top">
           <div>Exp: ??</div>

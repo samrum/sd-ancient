@@ -4,11 +4,13 @@ import DealDetails from "@components/latestDeals/dealDetails";
 export default class LatestDealDetails extends Component {
   render({ dealCount, deals }) {
     let dealDetailElements = [];
-    const groupedDealKeys = Object.keys(deals);
+    const dealKeys = Object.keys(deals);
 
-    if (groupedDealKeys.length) {
-      dealDetailElements = groupedDealKeys.map(key =>
-        deals[key].map(deal => {
+    if (dealKeys.length) {
+      dealDetailElements = dealKeys.map(key => {
+        const dealGroup = deals[key];
+
+        return dealGroup.deals.map(deal => {
           const props = {
             deal,
             showNext: deal.id < dealCount - 1,
@@ -16,8 +18,8 @@ export default class LatestDealDetails extends Component {
           };
 
           return <DealDetails {...props} />;
-        })
-      );
+        });
+      });
     } else {
       for (let i = 0; i < 20; i++) {
         dealDetailElements.push(<DealDetails />);

@@ -3,17 +3,22 @@ import LinkList from "@components/patterns/linkList";
 import LatestDealDetails from "@components/latestDeals/latestDealDetails";
 import LatestDealsSection from "@components/latestDeals/latestDealsSection";
 import LatestDealsFooter from "@components/latestDeals/latestDealsFooter";
+import { formatTimestamp } from "@utils/Dates";
 
 export default class LatestDeals extends Component {
   render(props) {
     const { deals } = props;
-    let latestDealsSections = null;
 
-    if (Object.keys(deals).length) {
-      latestDealsSections = Object.keys(deals).map(key => {
+    let latestDealsSections = null;
+    const dealKeys = Object.keys(deals);
+
+    if (dealKeys.length) {
+      latestDealsSections = dealKeys.map(key => {
+        const dealGroup = deals[key];
+
         const props = {
-          header: key,
-          deals: deals[key],
+          header: formatTimestamp(dealGroup.day),
+          deals: dealGroup.deals,
         };
 
         return <LatestDealsSection {...props} />;

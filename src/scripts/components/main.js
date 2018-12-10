@@ -1,6 +1,6 @@
 import { h, Component } from "preact";
 import LatestDeals from "@components/latestDeals/latestDeals";
-import DealFetcher from "./../DealFetcher";
+import DealFetcher from "@utils/DealFetcher";
 
 export default class Main extends Component {
   constructor(props) {
@@ -10,17 +10,30 @@ export default class Main extends Component {
 
   componentDidMount() {
     if (typeof PRERENDER === "undefined") {
-      DealFetcher.getDeals().then(groupedDeals => {
-        let dealCount = 0;
-        Object.keys(groupedDeals).forEach(key => {
-          dealCount += groupedDeals[key].length;
-        });
-        this.setState({
-          dealCount,
-          deals: groupedDeals,
-        });
-      });
+      const dealConfig = {
+        groupBy: "day",
+      };
+
+      DealFetcher.getDeals(dealConfig).then(
+        this.processDealResponse.bind(this)
+      );
     }
+  }
+
+  processDealResponse(response) {
+    let dealCount = 0;
+
+    response.dealGroups.forEach(group => {
+      group.deals.forEach(deal => {
+        deal.id = dealCount;
+        dealCount++;
+      });
+    });
+
+    this.setState({
+      dealCount,
+      deals: response.dealGroups,
+    });
   }
 
   render() {
