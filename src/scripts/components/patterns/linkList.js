@@ -13,6 +13,7 @@ export default function linkList(links, linkDelimiter, direction) {
 
       if (link.openInNewTab) {
         props.target = "_blank";
+        props.rel = "noopener";
       }
 
       return (

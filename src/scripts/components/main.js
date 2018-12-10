@@ -11,6 +11,7 @@ export default class Main extends Component {
   componentDidMount() {
     if (typeof PRERENDER === "undefined") {
       const dealConfig = {
+        cacheKey: "sd-ancient",
         groupBy: "day",
       };
 
