@@ -14,7 +14,7 @@ export default class DealFetcher {
       : true;
 
     if (!cachedDealsExpired && cachedData) {
-      return cachedData.deals;
+      return cachedData;
     }
 
     const dealHost =
