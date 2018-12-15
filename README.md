@@ -2,7 +2,7 @@
 
 It's [Slickdeals](https://slickdeals.net) recreated as it looked in January 2001 with Frontpage deal fetching from the SD Frontpage RSS feed. You can see what it looked like via the internet archive here: https://web.archive.org/web/20010119175000/http://www.slickdeals.net:80/
 
-A deployed instance of this project can be found [here](http://rubenmedina.com/sd-redesign-2018/).
+A deployed instance of this project can be found [here](http://rubenmedina.com/sd-ancient/).
 
 Built using [Preact](https://preactjs.com/). Uses a local deal server that fetches and parses the Slickdeals Frontpage RSS feed.
 
