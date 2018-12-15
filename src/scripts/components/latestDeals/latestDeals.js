@@ -46,14 +46,14 @@ export default class LatestDeals extends Component {
 
     const filterLinks = LinkList(links, " | ", "row");
 
-    const dealDays = Object.keys(deals);
+    let footerProps = {};
 
-    const toDate = dealDays[0];
-    const fromDate = dealDays[dealDays.length - 1];
-    const footerProps = {
-      toDate,
-      fromDate,
-    };
+    if (deals.length) {
+      footerProps = {
+        fromDate: deals[deals.length - 1].day,
+        toDate: deals[0].day,
+      };
+    }
 
     return (
       <div>

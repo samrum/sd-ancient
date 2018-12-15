@@ -5,7 +5,7 @@ export default class DateSelectors extends Component {
     const monthOptions = [];
     const dayOptions = [];
     const yearOptions = [];
-    const date = new Date(displayDate);
+    const date = new Date(displayDate * 1000);
     const month = date.getMonth();
     const day = date.getDate();
     const year = date.getFullYear();
