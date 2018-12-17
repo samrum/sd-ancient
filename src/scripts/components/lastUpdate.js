@@ -1,8 +1,12 @@
 import { h, Component } from "preact";
 
 export default class LastUpdate extends Component {
-  render() {
-    const date = new Date();
+  formatTimestamp(timestamp) {
+    if (!timestamp) {
+      return "";
+    }
+
+    const date = new Date(timestamp * 1000);
     const day = date.getDate();
     let hours = date.getHours();
     let minutes = date.getMinutes();
@@ -36,12 +40,19 @@ export default class LastUpdate extends Component {
       minutes = `0${minutes}`;
     }
 
-    const dateMessage = `${month} ${day}, ${hours}:${minutes} ${timeOfDay}`;
+    return `${month} ${day}, ${hours}:${minutes} ${timeOfDay} PT`;
+  }
+
+  render({ lastUpdate }) {
+    const dateMessage = this.formatTimestamp(lastUpdate);
+
+    const hiddenClass = lastUpdate ? "" : "hidden";
+    const sectionClass = `update-info ${hiddenClass}`;
 
     return (
-      <section class="update-info">
+      <section class={sectionClass}>
         <strong>Last Update: </strong>
-        {dateMessage} PT
+        {dateMessage}
       </section>
     );
   }

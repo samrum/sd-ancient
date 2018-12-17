@@ -301,6 +301,8 @@ section.page-content {
 .update-info {
   font-size: 10px;
   text-align: right; }
+  .update-info.hidden {
+    visibility: hidden; }
 
 main {
   padding: 0 5px; }

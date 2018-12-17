@@ -15,6 +15,10 @@ section.page-content {
 .update-info {
     font-size: 10px;
     text-align: right;
+
+    &.hidden {
+        visibility: hidden;
+    }
 }
 
 main {

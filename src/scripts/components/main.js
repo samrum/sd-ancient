@@ -22,6 +22,8 @@ export default class Main extends Component {
   }
 
   processDealResponse(response) {
+    const { onDealFetch } = this.props;
+
     let dealCount = 0;
 
     response.dealGroups.forEach(group => {
@@ -35,6 +37,8 @@ export default class Main extends Component {
       dealCount,
       deals: response.dealGroups,
     });
+
+    onDealFetch({ lastUpdate: response.timestamp });
   }
 
   render() {
