@@ -1,6 +1,6 @@
 import { h, Component } from "preact";
 import LatestDeals from "@components/latestDeals/latestDeals";
-import DealFetcher from "@utils/DealFetcher";
+import { fetchDeals } from "@utils/DealFetcher";
 
 export default class Main extends Component {
   constructor(props) {
@@ -15,9 +15,7 @@ export default class Main extends Component {
         groupBy: "day",
       };
 
-      DealFetcher.getDeals(dealConfig).then(
-        this.processDealResponse.bind(this)
-      );
+      fetchDeals(dealConfig).then(this.processDealResponse.bind(this));
     }
   }
 
